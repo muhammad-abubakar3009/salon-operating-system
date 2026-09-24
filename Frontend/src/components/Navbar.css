@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 32px;
+  background: var(--copper-dark);
+  color: var(--bone);
+}
+
+.navbar-brand {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: auto;
+}
+
+.navbar a {
+  color: var(--bone);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar button {
+  background: transparent;
+  border: 1px solid var(--bone);
+  color: var(--bone);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background: var(--bone);
+  color: var(--copper-dark);
+}

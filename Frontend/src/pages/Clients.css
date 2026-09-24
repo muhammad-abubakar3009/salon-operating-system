@@ -1,0 +1,130 @@
+.add-client-form {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.add-client-form label {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.add-client-form input[type="text"],
+.add-client-form input:not([type="checkbox"]) {
+  width: 100%;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 10px;
+  font-family: "Inter";
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.checkbox-label input {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.form-error {
+  color: var(--brick);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+.page-container {
+  padding: 24px 32px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.clients-table th,
+.clients-table td {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.clients-table th {
+  background: var(--bone);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.clients-table tr:not(:last-child) td {
+  border-bottom: 1px solid #eae5da;
+}
+
+.clients-table tr:hover td {
+  background: #f2eee5;
+}
+
+.allergy-badge {
+  background: #f5e2dc;
+  color: var(--brick);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--copper);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+.back-links {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.btn-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.btn-delete:hover {
+  color: var(--brick);
+}

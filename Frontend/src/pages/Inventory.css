@@ -1,0 +1,8 @@
+.low-stock-badge {
+  background: #f5e2dc;
+  color: var(--brick);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  margin-left: 8px;
+}

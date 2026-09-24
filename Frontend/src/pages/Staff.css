@@ -1,0 +1,21 @@
+.role-badge {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+.role-owner {
+  background: #f2eee5;
+  color: var(--copper-dark);
+}
+
+.role-stylist {
+  background: #e1e8e4;
+  color: var(--sage);
+}
+
+.role-receptionist {
+  background: #efe7dc;
+  color: var(--umber);
+}

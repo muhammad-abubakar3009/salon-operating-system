@@ -1,0 +1,28 @@
+:root {
+  --ink: #1C1712;
+  --bone: #F7F3ED;
+  --copper: #A85C2E;
+  --copper-dark: #7A4520;
+  --umber: #6B4A3A;
+  --sage: #5C7A6B;
+  --brick: #A3432F;
+  --border: #D8D2C6;
+  --text-muted: #7A756C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bone);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  margin: 0;
+}

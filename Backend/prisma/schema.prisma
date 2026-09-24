@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String
+  password_hash String
+  role  String  @default("staff")
+  created_at  DateTime  @default(now())
+  appointments  Appointment[]
+  resetToken    PasswordResetToken?
+  stockAdjustments StockAdjustment[]
+}
+
+model Client{
+  id Int @id @default(autoincrement())
+  name String 
+  phone String?
+  notes String?
+  allergy_flag Boolean @default(false)
+  created_at DateTime  @default(now())
+  appointments  Appointment[]
+}
+model Appointment{
+  id Int @id @default(autoincrement())
+  service String
+  appointment_time  DateTime
+  status  String  @default("booked")
+  created_at  DateTime @default(now())
+  formula  Formula?
+
+  client_id  Int
+  client     Client @relation(fields: [client_id], references: [id])
+
+  stylist_id Int
+  stylist    User   @relation(fields: [stylist_id], references: [id])
+}
+model Formula{
+id                Int      @id @default(autoincrement())
+  appointment_id    Int      @unique
+  appointment       Appointment @relation(fields: [appointment_id], references: [id])
+
+  formula           String
+  developer         String?
+  processing_time   Int?
+  starting_condition String?
+  desired_result    String?
+  actual_result     String?
+  before_photo_url  String?
+  after_photo_url   String?
+  stylist_notes     String?
+  client_feedback   String?
+  created_at        DateTime @default(now())
+
+}
+model PasswordResetToken {
+  id         Int      @id @default(autoincrement())
+  token      String   @unique
+  expires_at DateTime
+  user_id    Int      @unique
+  user       User     @relation(fields: [user_id], references: [id])
+}
+model Product {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  unit               String?
+  sku                String   @unique
+  stock_quantity     Int      @default(0)
+  reorder_threshold  Int      @default(0)
+  created_at         DateTime @default(now())
+
+  adjustments        StockAdjustment[]
+}
+model StockAdjustment {
+  id             Int      @id @default(autoincrement())
+  change_amount  Int
+  reason         String
+  created_at     DateTime @default(now())
+
+  product_id     Int
+  product        Product  @relation(fields: [product_id], references: [id])
+
+  adjusted_by_id Int
+  adjusted_by    User     @relation(fields: [adjusted_by_id], references: [id])
+}
